@@ -2,9 +2,9 @@
 
 Running the Project:
 
-1) Clone the project
-2)npm install
-3)npm start
+## Clone the project
+## npm install
+## npm start
 
 Application will run on the port 3000
 
@@ -16,7 +16,7 @@ Now you can see the first item of array in page and enabled the pagination for L
 
 To run the test:
 
-npm test.
+## npm test.
 
 Future implementaion: 
 
