@@ -28,17 +28,26 @@ onChangePage(pageOfItems,enable) {
 // save the input value to state
 onTitleChange(event)
 {
+    
     const queue=this.state.queue;
     queue.title=event.target.value;
+    
     this.setState({queue:queue});
 }
 //disptach the action
 onClickSave()
 {
-    
+    var pass = this.state.queue.title;
+    var reg = /^[A-Za-z0-9]+/;
+    var test = reg.test(pass); 
+    if(test){
 this.props.dispatch(queueActions.SavetoQueue(this.state.queue));
 alert(`saved ${this.state.queue.title}`);
 this.setState({inputenable:false});
+}
+else{
+    alert("Not valid entry");
+}
 }
 
 // display the pagination value (output value)
@@ -61,9 +70,9 @@ return(
   <br />     
     <h6>Enter a Number or Character</h6> <br/>
              
-    <input type="text" disabled={this.state.inputenable === false ? 'disabled' : ''}
-    onChange={this.onTitleChange} className="form-control"
-    value={this.state.displayItem.title } />
+    <input type="text" name="text" disabled={this.state.inputenable === false ? 'disabled' : ''}
+    onChange={this.onTitleChange} className="form-control" pattern="[a-z]{1,15}" 
+    value={this.state.displayItem.title } required />
     <br/>
    
     <input type="submit" disabled={this.state.inputenable === false ? 'disabled' : ''}
