@@ -24,5 +24,6 @@ We can save the store value to localstorage and persist the value after browser 
 
 Better UI
 
+Implementing error handling for not allow to enter other that number and text
 
 
